@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <assembly xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="urn:maven:assembly:1.1.0-SNAPSHOT">
-    
+
   <id>assemble</id>
-    
+
   <formats>
     <format>tar.gz</format>
   </formats>
@@ -46,6 +46,8 @@
 
         <include>org.camunda.bpm.model:*:jar</include>
 
+        <include>org.camunda.dmn:*:jar</include>
+
         <include>org.freemarker:*:jar</include>
         <include>org.camunda.template-engines:*:jar</include>
       </includes>
@@ -74,12 +76,14 @@
 
         <include>org.camunda.bpm.model:*:jar</include>
 
+        <include>org.camunda.dmn:*:jar</include>
+
         <include>org.freemarker:*:jar</include>
         <include>org.camunda.template-engines:*:jar</include>
       </includes>
     </dependencySet>
-  </dependencySets> 
-  
+  </dependencySets>
+
   <files>
     <file>
       <source>src/README.txt</source>
@@ -104,17 +108,17 @@
       <outputDirectory></outputDirectory>
       <fileMode>0755</fileMode>
     </file>
-    
+
     <file>
       <source>src/conf/server.xml</source>
       <outputDirectory>server/apache-tomcat-${version.tomcat}/conf/</outputDirectory>
     </file>
-    
+
     <file>
       <source>src/conf/bpm-platform.xml</source>
       <outputDirectory>server/apache-tomcat-${version.tomcat}/conf/</outputDirectory>
     </file>
-      
+
     <file>
       <source>src/tomcat6/setenv.bat</source>
       <outputDirectory>server/apache-tomcat-${version.tomcat}/bin/</outputDirectory>
